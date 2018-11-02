@@ -69,13 +69,18 @@ System.register(['app/plugins/sdk', 'lodash', './css/webcoach-panel.css!'], func
           var _this = _possibleConstructorReturn(this, (WebcoachAdviceListPanelCtrl.__proto__ || Object.getPrototypeOf(WebcoachAdviceListPanelCtrl)).call(this, $scope, $injector));
 
           _.defaultsDeep(_this.panel, {
-            bgColor: null,
-            scrollable: true
+            bgColor: null
           });
+
           _this.scrollable = true;
+          /**
+           * @property {array} adviceList - full advices list
+           */
           _this.adviceList = [];
+          /**
+           * @property {array} viewAdviceList - filtered advices for view
+           */
           _this.viewAdviceList = [];
-          // this.filtered
 
           _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
           _this.events.on('panel-teardown', _this.onPanelTeardown.bind(_this));
@@ -112,14 +117,7 @@ System.register(['app/plugins/sdk', 'lodash', './css/webcoach-panel.css!'], func
               this.adviceList = adviceMap;
               this.setViewAdviceList(adviceList);
               this.render();
-
-              console.log('adviceList', adviceList);
             }
-          }
-        }, {
-          key: 'onPanelTeardown',
-          value: function onPanelTeardown() {
-            this.$timeout.cancel(this.nextTickPromise);
           }
         }, {
           key: 'onClickFilter',
@@ -138,7 +136,7 @@ System.register(['app/plugins/sdk', 'lodash', './css/webcoach-panel.css!'], func
                   return advice.Score > 80;
                   break;
                 default:
-                  return this.adviceList;
+                  return true;
                   break;
               }
             });
@@ -146,7 +144,6 @@ System.register(['app/plugins/sdk', 'lodash', './css/webcoach-panel.css!'], func
         }, {
           key: 'onClickListItemTitle',
           value: function onClickListItemTitle(event) {
-            console.log('event', event);
             event.target.closest('.webcoach-panel__list_item').classList.toggle('-collapsed');
           }
         }, {
