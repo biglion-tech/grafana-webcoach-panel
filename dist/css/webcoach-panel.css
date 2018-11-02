@@ -1,0 +1,109 @@
+.webcoach-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 100%;
+}
+.webcoach-panel__description {
+  padding: 0.5rem;
+  margin:0;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.2s ease;
+}
+.webcoach-panel__filter {
+  margin-left: 10px;
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 20px;
+}
+.webcoach-panel__list_item_title {
+  color: #ccc;
+  cursor: pointer;
+  margin:0;
+  line-height: 120%;
+}
+.webcoach-panel__list_item_title:hover {
+  color: #fff;
+}
+.webcoach-panel__filter_item {
+  font-size: 10pt;
+  line-height: 10pt;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 0.15rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.webcoach-panel__filter_item:hover {
+  border: 1px solid #fff;
+}
+.webcoach-panel__filter_item.-fail { border-color: #c62828; color: #c62828; }
+.webcoach-panel__filter_item.-medium { border-color: #f9a825; color: #f9a825; }
+.webcoach-panel__filter_item.-success { border-color: #64dd17; color: #64dd17; }
+
+.webcoach-panel__list {
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+.webcoach-panel__list_item {
+  border: 1px solid #f9a825;
+  border-radius: 3px;
+  padding: 0.25rem;
+  margin-bottom: 10px;
+}
+.webcoach-panel__list_item-fail {
+  border: 1px solid #c62828;
+}
+.webcoach-panel__list_item-success {
+  border: 1px solid #64dd17;
+}
+.webcoach-panel__list_item_score {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 8pt;
+  line-height: 8pt;
+  border-radius: 3px;
+  color:#f9a825;
+  border: 1px solid #f9a825;
+  padding: 0.15rem;
+}
+.webcoach-panel__list_item_score-fail {
+  color: #c62828;
+  border: 1px solid #c62828;
+}
+.webcoach-panel__list_item_score-success {
+  color: #64dd17;
+  border: 1px solid #64dd17;
+}
+.webcoach-panel__offerndinglist {
+  list-style: none;
+  transition: all 0.2s ease;
+}
+.webcoach-panel__offerndinglist_item_link,
+.webcoach-panel__list_item_togglelist {
+  white-space: nowrap;
+  color: #f25615;
+  display: block;
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.webcoach-panel__offerndinglist_item_link:hover,
+.webcoach-panel__list_item_togglelist:hover {
+  color: #fff;
+}
+
+.webcoach-panel__list_item.-collapsed .webcoach-panel__offerndinglist {
+  opacity: 0;
+  height: 0;
+  visibility: collapse;
+}
+.webcoach-panel__list_item_content {
+  padding: 10px 10px 0 10px;
+}

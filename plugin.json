@@ -1,0 +1,21 @@
+{
+  "type": "panel",
+  "name": "Webcoach perfomance suggest",
+  "id": "grafana-webcoach-panel",
+
+  "info": {
+    "description": "Webcoach panel for grafana",
+    "author": {
+      "name": "Strokov Denis",
+      "url": "https://github.com/webislife"
+    },
+    "keywords": ["coach", "panel"],
+    "version": "1.0.0",
+    "updated": "2018-10-26"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "5.x.x",
+    "plugins": [ ]
+  }
+}

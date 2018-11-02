@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":["WebcoachAdviceListPanelCtrl"],"mappings":";;;;;;;;AAAQA,iC,kBAAAA,2B;;;2BAGNA,2B","file":"module.js","sourcesContent":["import {WebcoachAdviceListPanelCtrl} from './webcoach-panel';\n\nexport {\n  WebcoachAdviceListPanelCtrl as PanelCtrl\n};\n"]}

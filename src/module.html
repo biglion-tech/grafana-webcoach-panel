@@ -1,0 +1,35 @@
+<div class="webcoach-panel ng-style=" {height: ctrl.height}">
+  <div class="webcoach-panel__filter">
+    <span>Score filter:</span>
+    <div ng-click="ctrl.onClickFilter('fail')" class="webcoach-panel__filter_item -fail"> <30 </div> 
+    <div ng-click="ctrl.onClickFilter('medium')" class="webcoach-panel__filter_item -medium">30<80 </div>
+    <div ng-click="ctrl.onClickFilter('success')" class="webcoach-panel__filter_item -success">>80 </div>
+  </div>
+  <div class="webcoach-panel__list">
+    <div 
+      class="webcoach-panel__list_item -collapsed" 
+      ng-repeat="advice in ctrl.viewAdviceList track by $index"
+      ng-class="{'webcoach-panel__list_item-success': advice.Score>80,'webcoach-panel__list_item-fail': advice.Score<30}">
+      <h5 class="webcoach-panel__list_item_title">
+        <span class="webcoach-panel__list_item_score" ng-class="{'webcoach-panel__list_item_score-success': advice.Score>80,'webcoach-panel__list_item_score-fail': advice.Score<30}">
+          score: {{advice.Score}}
+        </span>
+        {{advice.Advice}}
+      </h5>
+      <div class="webcoach-panel__list_item_content">
+        <p class="webcoach-panel__description">
+          {{advice.Description}}
+          <div 
+          class="webcoach-panel__list_item_togglelist"
+          ng-show="advice.Offending.length > 0" 
+          ng-click="ctrl.onClickListItemTitle($event)">Show offending list</div>
+        </p>
+        <ul class="webcoach-panel__offerndinglist">
+          <li ng-repeat="offending in advice.Offending track by $index">
+            <a class="webcoach-panel__offerndinglist_item_link" href="{{offending}}">{{offending}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
